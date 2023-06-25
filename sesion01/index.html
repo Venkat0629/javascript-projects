@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Identifier Demo</title>
+    <title>Operators Demo</title>
     <style>
         body {
             padding-top: 10px;
@@ -17,20 +17,26 @@
         </div>
 
         <div class="panel-body">
-            <script>
-                var tempFahrenheit = 99;
-                let TempFahrenheit = 99;
-                // let TempFahrenheit=99; Redeclaration is not allowed 
-
-                const TEMP_CELSIUS = 38;
-
-                // document.write() is used to write content onto the HTML page
-                document.write("Default temperature (var) is: " + tempFahrenheit + "</span>");
-                document.write("<br/>");
-                document.write("Default temperature (let) is: " + TempFahrenheit + "</span>");
-                document.write("<br/>");
-                document.write("Normal body temperature in Celsius is: " + TEMP_CELSIUS + "</span>");
-            </script>
+            <p>Your body temperature is higher than the normal:
+                <span class="blinking">
+                    <script>
+                        let tempFahren = 99;
+                        const NORMAL_FAHREN = 98.6;
+                        let tempCelsius;
+                        const THIRTYTWO = 32;
+                        const TEMP = 1.8;
+                        tempCelsius = (tempFahren - THIRTYTWO) / TEMP;
+                        let fever = tempFahren > NORMAL_FAHREN;
+                        document.write(fever);
+                        document.write("<br/>");
+                        document.write("Your temperature is Celsius  : " + tempCelsius);
+                        document.write("<br/>");
+                        document.write(typeof (fever));
+                        document.write("<br/>");
+                        document.write(typeof (tempFahren));
+                    </script>
+                </span>
+            </p>
         </div>
     </div>
 </body>
